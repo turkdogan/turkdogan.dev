@@ -10,10 +10,10 @@ import { SOCIAL_LINKS } from '../consts';
         Turkdogan Tasdelen
       </h1>
       <p class="mt-2 text-lg text-zinc-600 dark:text-zinc-400">
-        Senior Software Engineer
+        Senior Software Engineer (System Design &amp; Architecture)
       </p>
       <p class="mt-4 max-w-2xl leading-relaxed text-zinc-600 dark:text-zinc-400">
-        Building software, writing about it, and sharing what I learn along the way.
+        I design and operate backend systems that handle high-volume, event-driven workflows and coordinate multiple subsystems reliably. Close to 20 years of solving distributed problems — from defense platforms to cloud-native identity systems.
       </p>
       <div class="mt-6 flex gap-4">
         {SOCIAL_LINKS.map(({ name, url }) => (
@@ -33,21 +33,49 @@ import { SOCIAL_LINKS } from '../consts';
   <section class="border-t border-zinc-200 dark:border-zinc-800">
     <div class="mx-auto max-w-4xl px-6 py-16">
       <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
-        About Me
+        About
       </h2>
       <div class="mt-6 space-y-4 leading-relaxed text-zinc-600 dark:text-zinc-400">
         <p>
-          I have over 15 years of experience as a software engineer, working across small startups and large organizations. Throughout my career I've designed and shipped systems ranging from defense platforms to enterprise-scale data applications and cloud-native microservices. My core expertise is on the JVM — Java and Kotlin — but I'm comfortable picking up whatever the problem demands.
+          Close to 20 years building software — from defense platforms and enterprise data systems to cloud-native SaaS products. I work mostly on the JVM (Java, Kotlin, Spring Boot) and spend my time on system design, backend architecture, and making distributed things work reliably.
         </p>
         <p>
-          Most of my career has been spent at the intersection of hands-on coding and technical leadership. I've led cross-functional teams, shaped system architectures, and mentored engineers — while staying close to the code. I believe the best technical decisions come from people who still build things every day.
+          I've led teams, managed project delivery, and mentored engineers, but I stay hands-on. I care about systems that are observable, recoverable, and straightforward to reason about when things go wrong.
         </p>
-        <p>
-          I'm particularly interested in distributed systems, event-driven architectures, and cloud infrastructure on AWS. I've built and operated services using Lambda, SNS, SQS, DynamoDB, and other managed services, and I enjoy the challenge of making complex systems reliable and observable.
-        </p>
-        <p>
-          Outside of work, I explored deep learning during a Ph.D. program and continue to follow developments in machine learning. I'm a runner, a weight lifter, and a firm believer in continuous improvement — in code and in life. This site is where I share what I learn, the projects I work on, and the occasional opinion on how we build software.
-        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-zinc-200 dark:border-zinc-800">
+    <div class="mx-auto max-w-4xl px-6 py-16">
+      <h2 class="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+        What I Bring
+      </h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        <div class="rounded-xl border border-zinc-200 p-5 dark:border-zinc-800">
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">System Architecture</h3>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Service boundaries, API contracts, event-driven pipelines. Designing systems that scale without becoming impossible to reason about.
+          </p>
+        </div>
+        <div class="rounded-xl border border-zinc-200 p-5 dark:border-zinc-800">
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Distributed Systems</h3>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Async pipelines, distributed job orchestration, race condition prevention, idempotent operations across unreliable boundaries.
+          </p>
+        </div>
+        <div class="rounded-xl border border-zinc-200 p-5 dark:border-zinc-800">
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Identity & Access Management</h3>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Governance workflows, audit trails, multi-provider integration. Building identity-aware backends that meet compliance requirements.
+          </p>
+        </div>
+        <div class="rounded-xl border border-zinc-200 p-5 dark:border-zinc-800">
+          <h3 class="font-semibold text-zinc-900 dark:text-zinc-100">Leadership & Project Management</h3>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Leading engineering teams, managing project delivery, mentoring developers, and driving architectural decisions — while staying hands-on with the codebase.
+          </p>
+        </div>
       </div>
     </div>
   </section>

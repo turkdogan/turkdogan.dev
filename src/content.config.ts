@@ -14,17 +14,14 @@ const blog = defineCollection({
   }),
 });
 
-const portfolio = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/portfolio' }),
+const work = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/work' }),
   schema: z.object({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
     tags: z.array(z.string()).default([]),
-    image: z.string().optional(),
-    url: z.string().optional(),
-    repo: z.string().optional(),
   }),
 });
 
-export const collections = { blog, portfolio };
+export const collections = { blog, work };

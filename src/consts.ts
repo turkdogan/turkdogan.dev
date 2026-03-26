@@ -1,11 +1,11 @@
 export const SITE_TITLE = 'Turkdogan Tasdelen';
-export const SITE_DESCRIPTION = 'Senior Software Engineer — Blog, Portfolio & More';
+export const SITE_DESCRIPTION = 'Software Engineer & Architect — Identity, Event-Driven Systems, and Distributed Architecture';
 export const SITE_URL = 'https://turkdogan.dev';
 
 export const NAV_LINKS = [
   { href: '/', label: 'Home' },
+  { href: '/work', label: 'Work' },
   { href: '/blog', label: 'Blog' },
-  { href: '/portfolio', label: 'Portfolio' },
   { href: '/contact', label: 'Contact' },
 ];
 
