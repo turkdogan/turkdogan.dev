@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('portfolio'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Portfolio" description="Projects and work I've done.">
+  <section class="mx-auto max-w-4xl px-6 py-16">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Portfolio</h1>
+    <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+      Projects and work I've been involved in.
+    </p>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      {projects.map((project) => (
+        <article class="group rounded-xl border border-zinc-200 p-6 transition-colors hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700">
+          <h2 class="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            {project.data.title}
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+            {project.data.description}
+          </p>
+          {project.data.tags.length > 0 && (
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              {project.data.tags.map((tag) => (
+                <span class="rounded bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          <div class="mt-4 flex gap-3">
+            {project.data.url && (
+              <a href={project.data.url} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent hover:underline">
+                Live
+              </a>
+            )}
+            {project.data.repo && (
+              <a href={project.data.repo} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-accent hover:underline">
+                Source
+              </a>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    {projects.length === 0 && (
+      <p class="mt-10 text-zinc-500 dark:text-zinc-400">Projects coming soon!</p>
+    )}
+  </section>
+</BaseLayout>

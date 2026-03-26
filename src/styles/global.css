@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-accent: 59 130 246;       /* blue-500 */
+    --color-accent-light: 96 165 250; /* blue-400 */
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-zinc-800 dark:bg-zinc-950 dark:text-zinc-200
+           antialiased transition-colors duration-200;
+  }
+}

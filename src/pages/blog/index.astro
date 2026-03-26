@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Blog" description="Thoughts on software engineering, architecture, and more.">
+  <section class="mx-auto max-w-4xl px-6 py-16">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">Blog</h1>
+    <p class="mt-2 text-zinc-600 dark:text-zinc-400">
+      Thoughts on software engineering, architecture, and things I learn.
+    </p>
+
+    <div class="mt-10 space-y-8">
+      {posts.map((post) => (
+        <article class="group">
+          <a href={`/blog/${post.id}`} class="block">
+            <div class="flex flex-col gap-1">
+              <div class="flex items-center gap-3 text-sm text-zinc-500 dark:text-zinc-400">
+                <FormattedDate date={post.data.date} />
+                {post.data.tags.length > 0 && (
+                  <span class="flex gap-1.5">
+                    {post.data.tags.map((tag) => (
+                      <span class="rounded bg-zinc-100 px-1.5 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
+                        {tag}
+                      </span>
+                    ))}
+                  </span>
+                )}
+              </div>
+              <h2 class="text-xl font-semibold text-zinc-900 group-hover:text-accent dark:text-zinc-100 dark:group-hover:text-accent-light">
+                {post.data.title}
+              </h2>
+              <p class="text-zinc-600 dark:text-zinc-400">
+                {post.data.description}
+              </p>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+
+    {posts.length === 0 && (
+      <p class="mt-10 text-zinc-500 dark:text-zinc-400">No posts yet. Check back soon!</p>
+    )}
+  </section>
+</BaseLayout>
